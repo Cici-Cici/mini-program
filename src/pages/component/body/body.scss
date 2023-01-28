@@ -1,0 +1,23 @@
+.body-view {
+  .body-text {
+    flex: 1;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: 0 10px;
+  }
+  .body-text::-webkit-scrollbar {
+    display: none;
+  }
+  .line1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .line2 {
+    display: flex;
+  }
+  .body-list {
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    text-align: center;
+  }
+}

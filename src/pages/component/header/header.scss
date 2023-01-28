@@ -1,0 +1,16 @@
+ .header-list {
+    background-color: rgba(255,255,255,.9);
+    display: flex;
+    text-align: center;
+    .text {
+        flex: 1;
+        color: #999;
+        overflow-x: scroll;
+        white-space:nowrap;  
+        margin: 0 10px; 
+      }
+      .text::-webkit-scrollbar {
+        display: none;
+    }
+  }
+  
