@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import { View,} from '@tarojs/components'
 import './index.scss'
-import Header from '../component/header/header.jsx'
-import Body from '../component/body/body.jsx'
-import{requestList}from '../services/api'
+import Header from '../../component/header/header.jsx'
+import Body from '../../component/body/body.jsx'
+import{requestList}from '../../services/api'
 
 export default class Show1 extends Component {
 
