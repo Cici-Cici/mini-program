@@ -1,3 +1,4 @@
+import path from 'path';
 const config = {
   projectName: 'taroThree',
   date: '2022-11-28',
@@ -23,6 +24,14 @@ const config = {
   cache: {
     enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
+  alias: {
+    src: path.resolve(__dirname, '..', 'src'),
+    assets: path.resolve(__dirname, '..', 'src/assets'),
+    services: path.resolve(__dirname, '..', 'src/services'),
+    component: path.resolve(__dirname, '..', 'src/component'),
+    config: path.resolve(__dirname, '..', 'src/config'),
+    store: path.resolve(__dirname, '..', 'src/store'),
+  },
   mini: {
     postcss: {
       pxtransform: {
@@ -38,9 +47,9 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-          namingPattern: 'module', // 转换模式，取值为 global/module
+          namingPattern: 'global', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
