@@ -2,14 +2,14 @@ export default defineAppConfig({
   pages: [
     'pages/feature/index',
     'pages/index/index',
-    'pages/component-page/index',
+    'pages/component_page/index',
     'pages/test/index',
     'pages/user/index',
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: '首页',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
@@ -25,8 +25,8 @@ export default defineAppConfig({
         // selectedIconPath: '',
       },
       {
-        pagePath: 'pages/component-page/index',
-        text: 'component-page',
+        pagePath: 'pages/component_page/index',
+        text: 'component_page',
         // iconPath: './assets/i.png',
         // selectedIconPath: './assets/i.png'
       },

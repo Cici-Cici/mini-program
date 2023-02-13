@@ -28,9 +28,11 @@ const config = {
     src: path.resolve(__dirname, '..', 'src'),
     assets: path.resolve(__dirname, '..', 'src/assets'),
     services: path.resolve(__dirname, '..', 'src/services'),
+    parts: path.resolve(__dirname, '..', 'src/parts'),
     component: path.resolve(__dirname, '..', 'src/component'),
     config: path.resolve(__dirname, '..', 'src/config'),
     store: path.resolve(__dirname, '..', 'src/store'),
+    tools:path.resolve(__dirname, '..', 'src/tools'),
   },
   mini: {
     postcss: {
