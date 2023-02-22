@@ -1,26 +1,21 @@
 import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View, CoverImage } from '@tarojs/components'
 import './index.scss'
-import * as api from '../services/api'
-import { Provider } from "mobx-react"
-import store from "../../store"
-import Show1 from "../show1"
-import { action } from "mobx";
-// import { observable, action, computed } from "mobx"; 
+
+
+// import Feature from '../feature'
 export default class Index extends Component {
-
-    componentWillMount() {
-
-    }
-
-
     render() {
-        return (
-            <Provider store={store}>
-                <View className='index'>
-                    <Show1 />
-                </View>
-            </Provider>
-        )
+        return null;
+        // <Feature/>
+
+                {/* <View className='index-page'>
+                    <image
+                        className='img'
+                        src='indexBg.png' />
+                    <view class="content">
+                       111
+                    </view>
+                </View> */}
     }
 }
