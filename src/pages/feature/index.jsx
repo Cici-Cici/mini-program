@@ -1,38 +1,75 @@
 import { Component } from 'react'
-import { View, Button,ScrollView } from '@tarojs/components'
-import './index.scss'
+import { View, Button, ScrollView } from '@tarojs/components'
+import styles from './index.scss'
+import CalinTabs from 'parts/CalinTabs'
+import CalinTabsBlock from 'parts/CalinTabsBlock'
 import { observer, inject } from "mobx-react"
 class Feature extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentIndex: 0,
+            tabList: [
+                // { title: '已使用' },
+                // { title: '未使用' },
+                // { title: '新功能' },
+                { title: '1' },
+                { title: '2' },
+                { title: '3' },
+            ]
+        };
     }
+    async onRefresh() {
+        // console.log('onRefresh111');
+        // console.log("this2",this);
+        // this.fetchData()
+      }
     componentWillMount() {
-        console.log('11');
-        console.log(this.props);
+        const { featureStore } = this.props;
+        featureStore.fetchFeatureList();
     }
+    handleClick = () => (e) => {
+        console.log('handleClick');
+        console.log(e);
+        this.setState({
+          currentIndex: e
+        })
+      }
     onPullDownRefresh() {
-        console.log('onPullDownRefresh');
+
     }
     render() {
+        const { currentIndex, tabList } = this.state;
+        const { featureStore: { hadFeatureList, noFeatureList, newFeatureList } } = this.props;
+        console.log('currentIndex',currentIndex);
         return (
-            <View className='index'>
-                <ScrollView
-                    scrollY
-                    style={{ height: `1200px` }}
-                    // refresherTriggered={isRefresh}
-                    enablePassive
-                    scrollWithAnimation
-                    refresherEnabled
-                    refresherBackground='#f4f5f6'
-                    refresherThreshold={100}
-                    // onRefresherRefresh={this.handleRefresh}
+            <View className={styles['subscribe']}>
+                <CalinTabs
+                    className={styles['tabs']}
+                    currentIndex={currentIndex}
+                    tabList={tabList}
+                    onClick={this.handleClick()}
+                    onRefresh={this.onRefresh.bind(this)}
                 >
-                    ddddd
+                    {/* <CalinTabsBlock current={currentIndex} index={0}>
+                        null1
+                        null1
+                        null1
+                    </CalinTabsBlock>
+                    <CalinTabsBlock current={currentIndex} index={1}>
+                        null1
+                        null1
+                        null1
+                    </CalinTabsBlock>
+                    <CalinTabsBlock current={currentIndex} index={2}>
+                    null3
+                    null3
+                    null3
+                    </CalinTabsBlock> */}
+                </CalinTabs>
+            </View >
+        );
 
-             </ScrollView>
-
-            </View>
-        )
     }
 }
 export default inject((stores) => ({
