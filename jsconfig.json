@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "paths": {
+      // "store/*": ["./src/store/*"],
+      // "assets/*": ["./src/assets/*"],
+      // "tools/*": ["./src/tools/*"],
+      // "services/*": ["./src/services/*"],
+      // "component/*": ["./src/component/*"],
+      // "src/*": ["./src/*"]
+    },
+    "jsx": "preserve",
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "compileOnSave": false
+}

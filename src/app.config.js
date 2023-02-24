@@ -5,6 +5,7 @@ export default defineAppConfig({
     'pages/component_page/index',
     'pages/test/index',
     'pages/user/index',
+    'pages/mini_features/notation_transform'
   ],
   window: {
     backgroundTextStyle: 'light',
