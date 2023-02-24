@@ -1,13 +1,3 @@
-.index-page{
-    width: 100%;
-    height: 100%;
-    background-color: #70c7da;
-    position: relative;
-    .content{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0px;
-        top: 0px;
-    }
-}
+@import '../../parts/global.scss';
+
+// 个人中心首页

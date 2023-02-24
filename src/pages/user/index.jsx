@@ -1,21 +1,29 @@
 import { Component } from 'react'
 import { View, CoverImage } from '@tarojs/components'
-import './index.scss'
+import styles from './index.scss';
 
 
-// import Feature from '../feature'
-export default class Index extends Component {
+class User extends Component {
     render() {
-        return null;
-        // <Feature/>
+        return (
+            <View>
+            暂无
 
-                {/* <View className='index-page'>
-                    <image
-                        className='img'
-                        src='indexBg.png' />
-                    <view class="content">
-                       111
-                    </view>
-                </View> */}
+            </View>
+            // <View className={styles['index']}>
+            //     <View className={styles['user-info']}>
+            //         <View className={styles['avatar-box']}>
+            //             {/* <Image src={this.headImgUrl()} /> */}
+            //             dd
+            //         </View>
+            //         <View className={styles['name-phone-box']}>
+            //             {/* <View className={styles['name']}>{this.getUserAuth()}</View>
+            //             {this.getView()} */}
+            //         </View>
+            //     </View>
+            // </View>
+        );
+
     }
 }
+export default User

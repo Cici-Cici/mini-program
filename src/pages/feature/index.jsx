@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { View, Button, ScrollView } from '@tarojs/components'
+import { View, Button, ScrollView, Navigator } from '@tarojs/components'
 import styles from './index.scss'
 import CalinTabs from 'parts/CalinTabs'
 import CalinTabsBlock from 'parts/CalinTabsBlock'
@@ -15,7 +15,7 @@ class Feature extends Component {
                 // { title: '新功能' },
                 { title: '1' },
                 { title: '2' },
-                { title: '3' },
+                // { title: '3' },
             ]
         };
     }
@@ -23,7 +23,7 @@ class Feature extends Component {
         // console.log('onRefresh111');
         // console.log("this2",this);
         // this.fetchData()
-      }
+    }
     componentWillMount() {
         const { featureStore } = this.props;
         featureStore.fetchFeatureList();
@@ -32,25 +32,33 @@ class Feature extends Component {
         console.log('handleClick');
         console.log(e);
         this.setState({
-          currentIndex: e
+            currentIndex: e
         })
-      }
+    }
     onPullDownRefresh() {
 
     }
     render() {
         const { currentIndex, tabList } = this.state;
         const { featureStore: { hadFeatureList, noFeatureList, newFeatureList } } = this.props;
-        console.log('currentIndex',currentIndex);
+        console.log('currentIndex', currentIndex);
         return (
-            <View className={styles['subscribe']}>
+            <View>
                 <CalinTabs
-                    className={styles['tabs']}
                     currentIndex={currentIndex}
                     tabList={tabList}
                     onClick={this.handleClick()}
                     onRefresh={this.onRefresh.bind(this)}
                 >
+                     看看
+                        来了
+                        来了
+                    <Navigator
+                        url={'/pages/mini_features/notation_transform/index'}
+                    >
+                        简谱转五线谱
+                    </Navigator>
+
                     {/* <CalinTabsBlock current={currentIndex} index={0}>
                         null1
                         null1
@@ -60,11 +68,6 @@ class Feature extends Component {
                         null1
                         null1
                         null1
-                    </CalinTabsBlock>
-                    <CalinTabsBlock current={currentIndex} index={2}>
-                    null3
-                    null3
-                    null3
                     </CalinTabsBlock> */}
                 </CalinTabs>
             </View >
