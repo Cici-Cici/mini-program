@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: 'component'
+  navigationBarTitleText: '转谱'
 })

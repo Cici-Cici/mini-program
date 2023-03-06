@@ -1,11 +1,20 @@
 export default defineAppConfig({
+  "lazyCodeLoading": "requiredComponents",
+  "subpackages": [
+    {
+      "root": "component",
+      "pages": [
+        "pages/user/index",
+      ]
+    },
+    // {
+    //   "root": "services",
+    // },
+  ],
   pages: [
-    'pages/feature/index',
-    'pages/index/index',
     'pages/component_page/index',
-    'pages/test/index',
-    'pages/user/index',
-    'pages/mini_features/notation_transform'
+    'pages/feature/index',
+    // 'pages/user/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -21,22 +30,22 @@ export default defineAppConfig({
     list: [
       {
         pagePath: 'pages/feature/index',
-        text: 'feature',
+        text: '功能',
         // iconPath: '',
         // selectedIconPath: '',
       },
       {
         pagePath: 'pages/component_page/index',
-        text: 'component_page',
+        text: '转谱',
         // iconPath: './assets/i.png',
         // selectedIconPath: './assets/i.png'
       },
-      {
-        pagePath: 'pages/user/index',
-        text: 'user',
-        // iconPath: './assets/icon_wa.png',
-        // selectedIconPath: './assets/i128.png'
-      },
+      // {
+      //   pagePath: 'pages/user/index',
+      //   text: '个人中心',
+      //   // iconPath: './assets/icon_wa.png',
+      //   // selectedIconPath: './assets/i128.png'
+      // },
     ],
   },
 })

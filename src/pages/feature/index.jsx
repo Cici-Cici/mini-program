@@ -1,8 +1,7 @@
 import { Component } from 'react'
-import { View, Button, ScrollView, Navigator } from '@tarojs/components'
+import { View, Navigator } from '@tarojs/components'
 import styles from './index.scss'
 import CalinTabs from 'parts/CalinTabs'
-import CalinTabsBlock from 'parts/CalinTabsBlock'
 import { observer, inject } from "mobx-react"
 class Feature extends Component {
     constructor(props) {
@@ -10,12 +9,8 @@ class Feature extends Component {
         this.state = {
             currentIndex: 0,
             tabList: [
-                // { title: '已使用' },
-                // { title: '未使用' },
-                // { title: '新功能' },
-                { title: '1' },
-                { title: '2' },
-                // { title: '3' },
+                { title: '已使用' },
+                { title: '新功能' },
             ]
         };
     }
@@ -35,6 +30,9 @@ class Feature extends Component {
             currentIndex: e
         })
     }
+    btnClick=()=>()=>{
+        Taro.navigateTo({url:'/pages/component_page/index'})
+    }
     onPullDownRefresh() {
 
     }
@@ -50,14 +48,14 @@ class Feature extends Component {
                     onClick={this.handleClick()}
                     onRefresh={this.onRefresh.bind(this)}
                 >
-                     看看
-                        来了
-                        来了
-                    <Navigator
-                        url={'/pages/mini_features/notation_transform/index'}
-                    >
-                        简谱转五线谱
-                    </Navigator>
+                    <View className={styles['btn']} onClick={this.btnClick}>
+                        <Navigator
+                            url={'/pages/component_page/index'}
+                        >
+                            简谱转五线谱
+                        </Navigator>
+                    </View>
+
 
                     {/* <CalinTabsBlock current={currentIndex} index={0}>
                         null1
