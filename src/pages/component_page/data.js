@@ -2,7 +2,7 @@ import noteType1 from 'assets/transform/noteType1.jpg';
 import noteType2 from 'assets/transform/noteType2.jpg';
 const keyboardData = [
   [
-    {keyboardNum:1,Element:noteType2,top:8,position:'height'},
+    {keyboardNum:1,Element:noteType2,top:9,position:'height'},
     {keyboardNum:2,Element:noteType2,top:4,position:'height'},
     {keyboardNum:3,Element:noteType2,top:1,position:'height'},
     {keyboardNum:4,Element:noteType2,top:-3,position:'height'},

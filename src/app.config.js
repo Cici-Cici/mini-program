@@ -1,16 +1,16 @@
 export default defineAppConfig({
   "lazyCodeLoading": "requiredComponents",
-  "subpackages": [
-    {
-      "root": "component",
-      "pages": [
-        "pages/user/index",
-      ]
-    },
+  // "subpackages": [
+  //   {
+  //     "root": "component",
+  //     "pages": [
+  //       "pages/user/index",
+  //     ]
+  //   },
     // {
     //   "root": "services",
     // },
-  ],
+  // ],
   pages: [
     'pages/component_page/index',
     'pages/feature/index',

@@ -55,6 +55,11 @@ export default class componentPage extends Component {
     render() {
         const imgWidth = '30px';
         const { heightStave, lowStave, staveNumList } = this.state;
+        const getKeyStyle=(lineIndex)=>{
+            if(lineIndex===0)return 'keyboard-line-top'
+            else if(lineIndex===1)return 'keyboard-line-center'
+            else if(lineIndex===2)return 'keyboard-line-bottom'
+        };
         return <View className={styles['transform']}>
             {
                 staveNumList.map((numberItem, index) => {
@@ -83,7 +88,7 @@ export default class componentPage extends Component {
                 {keyboardData.map((lineItem, indexItem) => {
                     return <View className={styles['keyboard-line']} key={indexItem}>
                         {lineItem.map((item, index) => {
-                            return <View className={styles['keyboard-line-item']} key={index} onClick={()=>{this.handleClick(indexItem,index)}}>
+                            return <View className={styles[getKeyStyle(indexItem)]} key={index} onClick={()=>{this.handleClick(indexItem,index)}}>
                                 {item.keyboardNum}
                             </View>
                         })}
