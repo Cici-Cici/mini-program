@@ -96,6 +96,7 @@ export default class componentPage extends Component {
             <View className={styles['keyboard']}>
             <Text className={styles['delete']} onClick={()=>{this.deleteClick('')}}>删除</Text>
             <Text className={styles['clear']} onClick={()=>{this.deleteClick('all')}}>清空</Text>
+            {/* <Text className={styles['download']}>添加标题</Text> */}
             <Text className={styles['download']}>下载</Text>
                 {keyboardData.map((lineItem, indexItem) => {
                     return <View className={styles['keyboard-line']} key={indexItem}>

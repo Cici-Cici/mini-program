@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: '转谱'
+  navigationBarTitleText: '简谱转五线谱'
 })
