@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import {keyboardData,maxLineNum,} from './data'
-import { View, CoverImage } from '@tarojs/components'
+import { View, CoverImage,Text } from '@tarojs/components'
 import styles from './index.scss';
 export default class componentPage extends Component {
     constructor() {
@@ -13,6 +13,7 @@ export default class componentPage extends Component {
         }
     }
     handleClick(itemIndex,index){
+        console.log('1111');
         const note=keyboardData[itemIndex][index];
         //点击后改变两个数组
         let heightStave = this.state.heightStave;
@@ -26,12 +27,20 @@ export default class componentPage extends Component {
         }
         this.setState({ heightStave, lowStave }, this.changeNum(lowStave.length))
     };
-    deleteClick = () => {
-        let heightStave = this.state.heightStave;
-        let lowStave = this.state.lowStave;
-        heightStave.pop();
-        lowStave.pop();
-        this.setState({heightStave,lowStave},this.changeNum(lowStave.length));
+    deleteClick(type){
+        if(type==='all'){
+           const heightStave= [];
+           const lowStave=[];
+           const staveCurrentNum= 0;
+           const staveNumList=[];
+            this.setState({ heightStave, lowStave,staveCurrentNum,staveNumList})
+        }else{
+            let heightStave = this.state.heightStave;
+            let lowStave = this.state.lowStave;
+            heightStave.pop();
+            lowStave.pop();
+            this.setState({heightStave,lowStave},this.changeNum(lowStave.length));
+        }
     };
     changeNum(num) {
         //改变组个数
@@ -83,8 +92,12 @@ export default class componentPage extends Component {
                     </View>
                 })
             }
-            <View className={styles['delete']} onClick={this.deleteClick}>删除</View>
+
             <View className={styles['keyboard']}>
+            <Text className={styles['delete']} onClick={()=>{this.deleteClick('')}}>删除</Text>
+            <Text className={styles['clear']} onClick={()=>{this.deleteClick('all')}}>清空</Text>
+            {/* <Text className={styles['download']}>添加标题</Text> */}
+            <Text className={styles['download']}>下载</Text>
                 {keyboardData.map((lineItem, indexItem) => {
                     return <View className={styles['keyboard-line']} key={indexItem}>
                         {lineItem.map((item, index) => {
